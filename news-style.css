@@ -1,0 +1,473 @@
+/* ==========================
+   ACADEMIA DE SONNETA
+   NEWS PAGE CSS
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   RESET & BASE
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0);      }
+}
+
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0);     }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(.8); }
+    to   { opacity: 1; transform: scale(1);  }
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+header {
+    background: #003366;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    animation: fadeLeft 1s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 25px; }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+nav ul li a:hover { color: #ffc107; }
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after { width: 100%; }
+
+nav ul li a.active { color: #ffc107; }
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #003366;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: .4s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section { padding: 90px 8%; }
+
+.section-alt { background: #f5f8fc; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #003366;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #ffc107;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+}
+
+/* ==========================
+   NEWS HERO
+========================== */
+
+.news-hero {
+    height: 55vh;
+    background:
+        linear-gradient(rgba(0,51,102,.82), rgba(0,51,102,.82)),
+        url("img/enrollment.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.news-hero-content { animation: zoomIn 1.2s ease; }
+
+.news-hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+}
+
+.news-hero-content p {
+    font-size: 1.15rem;
+    opacity: .9;
+}
+
+/* ==========================
+   FEATURED NEWS
+========================== */
+
+.featured-news {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 40px;
+    align-items: center;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.1);
+    overflow: hidden;
+    animation: fadeUp 1s ease;
+}
+
+.featured-image {
+    background-image: url(img/enrollment.jpg);
+    background-size: 490px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5.5rem;
+    color: #003366;
+}
+
+.featured-content {
+    padding: 40px 40px 40px 0;
+    animation: fadeRight 1s ease;
+}
+
+.featured-content h3 {
+    font-size: 1.6rem;
+    color: #003366;
+    margin: 12px 0 16px;
+    line-height: 1.4;
+}
+
+.featured-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-size: .97rem;
+}
+
+/* ==========================
+   NEWS TAG & DATE
+========================== */
+
+.news-tag {
+    display: inline-block;
+    background: #ffc107;
+    color: #003366;
+    font-size: .78rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.news-date {
+    display: block;
+    font-size: .82rem;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+/* ==========================
+   NEWS GRID
+========================== */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 26px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    animation: fadeUp 1s ease;
+    transition: .4s;
+    border-bottom: 4px solid transparent;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.13);
+    border-bottom-color: #ffc107;
+}
+
+.news-icon {
+    font-size: 2rem;
+    color: #ffc107;
+    margin-bottom: 14px;
+}
+
+.news-card h3 {
+    color: #003366;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.news-card p {
+    color: #666;
+    font-size: .9rem;
+    line-height: 1.72;
+    margin-bottom: 16px;
+}
+
+.news-link {
+    color: #003366;
+    font-weight: 600;
+    font-size: .88rem;
+    text-decoration: none;
+    position: relative;
+    transition: .3s;
+}
+
+.news-link::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: .3s;
+}
+
+.news-link:hover { color: #ffc107; }
+.news-link:hover::after { width: 100%; }
+
+/* ==========================
+   ANNOUNCEMENTS
+========================== */
+
+.announcements-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeUp 1s ease;
+}
+
+.announcement {
+    background: white;
+    border-left: 6px solid #ffc107;
+    padding: 20px 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.07);
+    color: #444;
+    font-size: .97rem;
+    line-height: 1.7;
+    transition: .3s;
+}
+
+.announcement:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   CAMPUS HIGHLIGHTS
+========================== */
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.highlight-card {
+    background: white;
+    border-radius: 15px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    animation: zoomIn 1s ease;
+    transition: .4s;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+.highlight-card i {
+    font-size: 2.6rem;
+    color: #ffc107;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.highlight-card h3 {
+    color: #003366;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+    color: #666;
+    font-size: .92rem;
+    line-height: 1.72;
+}
+
+/* ==========================
+   WELCOME BOX
+========================== */
+
+.welcome {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    animation: fadeUp 1s ease;
+    text-align: center;
+    color: #555;
+    line-height: 1.85;
+    font-size: .97rem;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 { margin-bottom: 10px; }
+
+footer p { opacity: .85; font-size: .92rem; }
+
+footer .copyright {
+    margin-top: 14px;
+    font-size: .82rem;
+    opacity: .6;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #ddd; }
+::-webkit-scrollbar-thumb { background: #003366; border-radius: 10px; }
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    nav { flex-direction: column; }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    nav ul li { margin: 10px; }
+
+    .news-hero-content h1 { font-size: 2.2rem; }
+
+    .featured-news { grid-template-columns: 1fr; }
+
+    .featured-image { height: 200px; }
+
+    .featured-content { padding: 28px; }
+}
+
+@media (max-width: 600px) {
+    .news-hero-content h1 { font-size: 1.8rem; }
+    .section-title { font-size: 2rem; }
+    section { padding: 70px 5%; }
+    .featured-content h3 { font-size: 1.3rem; }
+}

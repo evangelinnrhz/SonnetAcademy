@@ -1,0 +1,382 @@
+/* ==========================
+   ACADEMIA DE SONNETA
+   CONTACT PAGE CSS
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   RESET & BASE
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0);      }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(.8); }
+    to   { opacity: 1; transform: scale(1);  }
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+header {
+    background: #003366;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    animation: fadeLeft 1s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 25px; }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+nav ul li a:hover { color: #ffc107; }
+
+nav ul li a.active { color: #ffc107; }
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after { width: 100%; }
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #003366;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: .4s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn-outline {
+    background: #003366;
+    color: white;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section { padding: 90px 8%; }
+
+.section-alt { background: #f5f8fc; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #003366;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #ffc107;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+}
+
+/* ==========================
+   WELCOME BOX
+========================== */
+
+.welcome {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    animation: fadeUp 1s ease;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: #444;
+    line-height: 1.85;
+}
+
+/* ==========================
+   CONTACT HERO
+========================== */
+
+.contact-hero {
+    height: 55vh;
+    background:
+        linear-gradient(rgba(0,51,102,.82), rgba(0,51,102,.82)),
+        url("img/amazing.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.contact-hero-content { animation: zoomIn 1.2s ease; }
+
+.contact-hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+}
+
+.contact-hero-content p {
+    font-size: 1.15rem;
+    opacity: .9;
+}
+
+/* ==========================
+   CREATOR CARD
+========================== */
+
+.creator-wrapper {
+    display: flex;
+    justify-content: center;
+    animation: fadeUp 1s ease;
+}
+
+.creator-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    padding: 50px 45px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    border-top: 6px solid #ffc107;
+}
+
+.creator-avatar{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #003366;
+}
+
+.creator-avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.creator-badge {
+    display: inline-block;
+    background: #e8f0f8;
+    color: #1a5ca8;
+    font-size: .78rem;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.creator-name {
+    color: #003366;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.creator-tagline {
+    color: #888;
+    font-size: .88rem;
+    margin-bottom: 32px;
+}
+
+/* ==========================
+   CONTACT LIST
+========================== */
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #f5f8fc;
+    border-radius: 12px;
+    padding: 14px 18px;
+    transition: .3s;
+}
+
+.contact-item:hover {
+    background: #e8f0f8;
+    transform: translateX(6px);
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* Platform colors */
+.contact-icon.email    { background: #003366; }
+.contact-icon.phone    { background: #1a5ca8; }
+.contact-icon.instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+.contact-icon.facebook { background: #1877f2; }
+.contact-icon.discord  { background: #5865f2; }
+.contact-icon.tiktok   { background: #010101; }
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contact-label {
+    font-size: .75rem;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.contact-value {
+    font-size: .95rem;
+    font-weight: 500;
+    color: #003366;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 { margin-bottom: 10px; }
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #ddd; }
+::-webkit-scrollbar-thumb { background: #003366; border-radius: 10px; }
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+    nav { flex-direction: column; }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    nav ul li { margin: 10px; }
+
+    .contact-hero-content h1 { font-size: 2.2rem; }
+
+    .creator-card { padding: 40px 28px; }
+}
+
+@media (max-width: 600px) {
+    .contact-hero-content h1 { font-size: 1.8rem; }
+    .section-title { font-size: 2rem; }
+    section { padding: 70px 5%; }
+    .creator-name { font-size: 1.4rem; }
+}

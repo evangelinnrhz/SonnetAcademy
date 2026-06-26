@@ -1,0 +1,386 @@
+/* ==========================
+   ACADEMIA DE SONNETA
+   HOMEPAGE CSS
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   RESET & BASE
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #ffffff;
+    color: #ffffff;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0);      }
+}
+
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0);     }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(.8); }
+    to   { opacity: 1; transform: scale(1);  }
+}
+
+@keyframes float {
+    0%   { transform: translateY(0px);   }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px);   }
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+header {
+    background: #003366;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    animation: fadeLeft 1s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 25px; }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+nav ul li a:hover { color: #ffc107; }
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .3s;
+}
+
+nav ul li a:hover::after { width: 100%; }
+
+nav ul li a.active { color: #ffc107; }
+
+nav ul li a.active::after { width: 100%; }
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #003366;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: .4s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section { padding: 90px 8%; }
+
+.section-alt { background: #f5f8fc; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #003366;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #ffc107;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero {
+    height: 100vh;
+    background-image:
+        linear-gradient(rgba(0,51,102,.55), rgba(0,51,102,.75)),
+        url("img/school.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content { animation: zoomIn 1.2s ease; }
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.hero-content h1:hover { animation: float 2s infinite; }
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: .9;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    transition: .4s;
+    animation: fadeUp 1s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+.card h3 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: .95rem;
+    line-height: 1.75;
+}
+
+/* ==========================
+   WELCOME SECTION
+========================== */
+
+.welcome {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    animation: fadeUp 1s ease;
+    color: #555;
+    line-height: 1.95;
+    font-size: .97rem;
+}
+
+/* ==========================
+   ANNOUNCEMENTS
+========================== */
+
+.announcement {
+    background: white;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border-left: 6px solid #ffc107;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.07);
+    transition: .3s;
+    animation: fadeRight 1s ease;
+    color: #444;
+    font-size: .97rem;
+    line-height: 1.7;
+}
+
+.announcement:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   EVENTS
+========================== */
+
+.events { list-style: none; }
+
+.events li {
+    background: white;
+    margin-bottom: 15px;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+    transition: .3s;
+    color: #444;
+    font-size: .97rem;
+    line-height: 1.7;
+}
+
+.events li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   ACHIEVEMENTS
+========================== */
+
+.achievement-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    transition: .4s;
+    animation: zoomIn 1s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+.achievement-card i {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.achievement-card h3 {
+    color: #003366;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.achievement-card p {
+    color: #666;
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 { margin-bottom: 10px; }
+
+footer p { opacity: .85; font-size: .92rem; }
+
+footer .copyright {
+    margin-top: 14px;
+    font-size: .82rem;
+    opacity: .6;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #ddd; }
+::-webkit-scrollbar-thumb { background: #003366; border-radius: 10px; }
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    nav { flex-direction: column; }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    nav ul li { margin: 10px; }
+
+    .hero-content h1 { font-size: 3rem; }
+
+    .hero-content p { font-size: 1.1rem; }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .section-title { font-size: 2rem; }
+    section { padding: 70px 5%; }
+}

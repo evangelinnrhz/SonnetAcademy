@@ -1,0 +1,601 @@
+/* ==========================
+   ACADEMIA DE SONNETA
+   PROGRAMS PAGE CSS
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   RESET & BASE
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0);      }
+}
+
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0);     }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(.8); }
+    to   { opacity: 1; transform: scale(1);  }
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+header {
+    background: #003366;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    animation: fadeLeft 1s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 25px; }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+nav ul li a:hover { color: #ffc107; }
+
+nav ul li a.active { color: #ffc107; }
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after { width: 100%; }
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #003366;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: .4s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn-outline {
+    background: #003366;
+    color: white;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section { padding: 90px 8%; }
+
+.section-alt { background: #f5f8fc; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #003366;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #ffc107;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+}
+
+/* ==========================
+   WELCOME / INTRO BOX
+========================== */
+
+.welcome,
+.intro-box {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    animation: fadeUp 1s ease;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #444;
+    line-height: 1.85;
+    font-size: 1rem;
+}
+
+/* ==========================
+   PROGRAMS HERO
+========================== */
+
+.programs-hero {
+    height: 55vh;
+    background:
+        linear-gradient(rgba(0,51,102,.82), rgba(0,51,102,.82)),
+        url("img/programs.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.programs-hero-content { animation: zoomIn 1.2s ease; }
+
+.programs-hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+}
+
+.programs-hero-content p {
+    font-size: 1.15rem;
+    opacity: .9;
+}
+
+/* ==========================
+   LEVEL CARDS
+========================== */
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.level-card {
+    background: white;
+    padding: 35px 28px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    text-align: center;
+    animation: fadeUp 1s ease;
+    transition: .4s;
+    border-top: 5px solid #1a5ca8;
+}
+
+.level-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+.level-card.featured {
+    border-top-color: #ffc107;
+    position: relative;
+}
+
+.level-card.featured::before {
+    content: '★ Featured';
+    position: absolute;
+    top: -1px;
+    right: 18px;
+    background: #ffc107;
+    color: #003366;
+    font-size: .72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 0 0 8px 8px;
+    letter-spacing: .05em;
+}
+
+.level-icon {
+    font-size: 2.8rem;
+    color: #ffc107;
+    margin-bottom: 16px;
+}
+
+.level-card h3 {
+    color: #003366;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.level-badge {
+    display: inline-block;
+    background: #e8f0f8;
+    color: #003366;
+    font-size: .75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.level-card p {
+    color: #555;
+    line-height: 1.75;
+    font-size: .92rem;
+    margin-bottom: 18px;
+}
+
+.level-features {
+    list-style: none;
+    text-align: left;
+}
+
+.level-features li {
+    color: #444;
+    font-size: .88rem;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.level-features li i {
+    color: #ffc107;
+    font-size: .8rem;
+    flex-shrink: 0;
+}
+
+/* ==========================
+   TRACK CARDS
+========================== */
+
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.track-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    animation: fadeUp 1s ease;
+    transition: .4s;
+}
+
+.track-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+.track-top {
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+}
+
+.track-top i {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.track-top h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+}
+
+.track-top.stem  { background: #003366; }
+.track-top.abm   { background: #1a5ca8; }
+.track-top.humss { background: #2e86c1; }
+.track-top.tvl   { background: #ffc107; color: #003366; }
+
+.track-body {
+    background: white;
+    padding: 22px 20px;
+}
+
+.track-body p:first-child {
+    font-weight: 600;
+    color: #003366;
+    font-size: .9rem;
+    margin-bottom: 8px;
+}
+
+.track-body p:last-child {
+    color: #555;
+    font-size: .88rem;
+    line-height: 1.65;
+}
+
+/* ==========================
+   EXTRAS GRID
+========================== */
+
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.extra-card {
+    background: white;
+    border-radius: 15px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: default;
+    transition: .4s;
+    animation: zoomIn 1s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    border-bottom: 4px solid #ffc107;
+}
+
+.extra-card:hover {
+    background: #003366;
+    color: white;
+    transform: scale(1.05);
+}
+
+.extra-card i {
+    font-size: 2.2rem;
+    color: #003366;
+    transition: .4s;
+}
+
+.extra-card:hover i { color: #ffc107; }
+
+.extra-card span {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #003366;
+    transition: .4s;
+}
+
+.extra-card:hover span { color: white; }
+
+/* ==========================
+   QUICK ENROLL FORM
+========================== */
+
+.enroll-wrap {
+    max-width: 950px;
+    margin: 45px auto 0;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    animation: fadeUp 1s ease;
+    text-align: left;
+}
+
+.enroll-side {
+    background: #003366;
+    background-image: linear-gradient(160deg, #003366 0%, #1a5ca8 100%);
+    color: white;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.enroll-side i {
+    font-size: 2.2rem;
+    color: #ffc107;
+    margin-bottom: 14px;
+}
+
+.enroll-side h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.enroll-side p {
+    font-size: .92rem;
+    line-height: 1.7;
+    opacity: .9;
+}
+
+.enroll-form {
+    padding: 40px 36px;
+}
+
+.enroll-form h4 {
+    color: #003366;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #dbe4ee;
+    border-radius: 10px;
+    font-size: .9rem;
+    color: #333;
+    background: #f9fbfd;
+    transition: .3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1a5ca8;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26,92,168,.12);
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 18px 0 22px;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: #1a5ca8;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.form-checkbox label {
+    font-size: .82rem;
+    color: #555;
+    line-height: 1.55;
+    cursor: pointer;
+}
+
+.enroll-form .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+}
+
+.form-note {
+    font-size: .75rem;
+    color: #888;
+    text-align: center;
+    margin-top: 12px;
+}
+
+@media (max-width: 750px) {
+    .enroll-wrap { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 { margin-bottom: 10px; }
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #ddd; }
+::-webkit-scrollbar-thumb { background: #003366; border-radius: 10px; }
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+    nav { flex-direction: column; }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    nav ul li { margin: 10px; }
+
+    .programs-hero-content h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 600px) {
+    .programs-hero-content h1 { font-size: 1.8rem; }
+    .section-title { font-size: 2rem; }
+    section { padding: 70px 5%; }
+}
